@@ -18,6 +18,11 @@
         <div class="backgraund w-full h-screen bg-orange-100 flex justify-center items-center">
             <div class="slaider_container relative">
 
+                <nav class="bg-indigo-800">
+                    <h1>Section Cards</h1>
+                    <button type="button" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" @click="addCard()">Add Card</button>
+                </nav>
+
                 <ul class="slaider w-fit flex">
                     <div class="card w-[280px] h-[400px] mx-8 rounded-[25px] bg-white inline-block overflow-hidden last-of-type:opacity-50" v-for="(card, index) in getActiveArray()" :style=" card.title ? {'visibility': 'visible'} : {'visibility': 'hidden'} ">
                         <div class="card_top">
