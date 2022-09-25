@@ -31,13 +31,13 @@ Vue.createApp({
             this.arrMaxSize -= 1;
         },
 
-        // ritorna numero = index ultimo elemento di cards
+        // Ritorna numero = index ultimo elemento di cards
         // serve per disabilitare funzionamento btn next quando si raggiunge la fine dell'array cards
         getArrayLimit(){
             return this.cards.length;
         },
 
-        // ritona un array con i soli quattro elementi da mostrare 
+        // Ritona un array con i soli quattro elementi da mostrare 
         getActiveArray() {
             return this.cards.slice(this.arrMinSize, this.arrMaxSize);
         },
