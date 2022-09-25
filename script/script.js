@@ -60,7 +60,7 @@ Vue.createApp({
             this.cards.splice(2, this.getArrayLimit() - 4);
 
             let y = 100
-            for (let i = 0; i <= this.nCardsToAdd; i++) {
+            for (let i = 0; i <= this.nCardsToAdd - 1; i++) {
                 const newCard = {
                     src: 'https://picsum.photos/id/'+ y++ +'/100/100',
                     title: 'Title',
@@ -70,6 +70,11 @@ Vue.createApp({
                 this.cards.splice(this.getArrayLimit() - 2, 0, newCard)
             }
             console.log(this.nCardsToAdd)
+        },
+
+        selectCard(index){
+            this.arrMinSize = index;
+            this.arrMaxSize = index + 5;
         }
 
     },
