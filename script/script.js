@@ -6,7 +6,7 @@ Vue.createApp({
                 {},
                 {
                     src: 'https://picsum.photos/id/100/100/100',
-                    title: 'Title1',
+                    title: 'Card 0',
                     text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
                 },
                 {},
@@ -42,7 +42,7 @@ Vue.createApp({
             return this.cards.slice(this.arrMinSize, this.arrMaxSize);
         },
 
-        // cumulativo
+        // Aggiunta cards cumulativo
         // addCard(){
         //     const newCard = {
         //         src: 'https://picsum.photos/id/241/100/100',
@@ -56,7 +56,7 @@ Vue.createApp({
         //     console.log(this.nCardsToAdd)
         // }
 
-        // Aggiunta card dinamica a numero fisso
+        // Aggiunta cards a numero fisso
         addCard(){
             this.cards.splice(2, this.getArrayLimit() - 4);
 
@@ -64,15 +64,15 @@ Vue.createApp({
             for (let i = 0; i <= this.nCardsToAdd - 1; i++) {
                 const newCard = {
                     src: 'https://picsum.photos/id/'+ y++ +'/100/100',
-                    title: 'Title',
+                    title: 'Card ' + i,
                     text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
                 };
 
                 this.cards.splice(this.getArrayLimit() - 2, 0, newCard)
             }
-            console.log(this.nCardsToAdd)
         },
 
+        // Mostra in posizione centrale la card selezionata in pagination
         selectCard(index){
             this.arrMinSize = index;
             this.arrMaxSize = index + 5;
