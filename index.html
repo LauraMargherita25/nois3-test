@@ -18,13 +18,18 @@
         <div class="backgraund w-full h-screen bg-orange-100 flex justify-center items-center">
             <div class="slaider_container relative">
 
-                <nav class="bg-indigo-800">
-                    <h1>Section Cards</h1>
-                    <div class="w-1/12">
-                        <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Number of Cards: {{ nCardsToAdd }}</label>
+                <nav class="w-3/4 mx-auto mb-12 flex justify-evenly items-center ">
+                    <h1 class="text-4xl">Section Cards</h1>
+                    
+                    <div class="w-1/8">
+                        <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900">Number of Cards: {{ nCardsToAdd }}</label>
                         <input id="default-range" type="range" min="1" max="10" v-model="nCardsToAdd" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" @click="addCard()">
                     </div>
 
+                    <div class="flex items-center">
+                        <label for="color">Background color: </label>
+                        <input type="color" id="color" name="color" v-model="selectedColor" class="m-2 w-8 rounded appearance-none border-2 border-solid border-white"> 
+                    </div>
                 </nav>
 
                 <ul class="slaider w-[1720px] flex">

@@ -16,6 +16,7 @@ Vue.createApp({
             arrMinSize: 0,
             arrMaxSize: 5,
             nCardsToAdd: 1,
+            selectedColor: "#ffedd5"
         }
     },
 
