@@ -20,10 +20,14 @@
 
                 <nav class="bg-indigo-800">
                     <h1>Section Cards</h1>
-                    <button type="button" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" @click="addCard()">Add Card</button>
+                    <div class="w-1/12">
+                        <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Number of Cards: {{ nCardsToAdd }}</label>
+                        <input id="default-range" type="range" min="1" max="10" v-model="nCardsToAdd" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" @click="addCard()">
+                    </div>
+
                 </nav>
 
-                <ul class="slaider w-fit flex">
+                <ul class="slaider w-[1720px] flex">
                     <div class="card w-[280px] h-[400px] mx-8 rounded-[25px] bg-white inline-block overflow-hidden last-of-type:opacity-50" v-for="(card, index) in getActiveArray()" :style=" card.title ? {'visibility': 'visible'} : {'visibility': 'hidden'} ">
                         <div class="card_top">
                             <img :src="card.src" alt=""  class="rounded-full mx-auto my-9"/>

@@ -5,28 +5,8 @@ Vue.createApp({
                 {},
                 {},
                 {
-                    src: 'https://picsum.photos/id/237/100/100',
+                    src: 'https://picsum.photos/id/100/100/100',
                     title: 'Title1',
-                    text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-                },
-                {
-                    src: 'https://picsum.photos/id/238/100/100',
-                    title: 'Title2',
-                    text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-                },
-                {
-                    src: 'https://picsum.photos/id/239/100/100',
-                    title: 'Title3',
-                    text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-                },
-                {
-                    src: 'https://picsum.photos/id/240/100/100',
-                    title: 'Title4',
-                    text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-                },
-                {
-                    src: 'https://picsum.photos/id/241/100/100',
-                    title: 'Title5',
                     text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
                 },
                 {},
@@ -35,6 +15,7 @@ Vue.createApp({
 
             arrMinSize: 0,
             arrMaxSize: 5,
+            nCardsToAdd: 1,
         }
     },
 
@@ -60,14 +41,35 @@ Vue.createApp({
             return this.cards.slice(this.arrMinSize, this.arrMaxSize);
         },
 
-        // aggiungo una card a crds
+        // cumulativo
+        // addCard(){
+        //     const newCard = {
+        //         src: 'https://picsum.photos/id/241/100/100',
+        //         title: 'Title',
+        //         text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+        //     };
+
+        //     for (let i = 0; i <= this.nCardsToAdd; i++) {
+        //         this.cards.splice(this.getArrayLimit() - 2, 0, newCard)
+        //     }
+        //     console.log(this.nCardsToAdd)
+        // }
+
+        // Aggiunta card dinamica a numero fisso
         addCard(){
-            const newCard = {
-                src: 'https://picsum.photos/id/241/100/100',
-                title: 'Title',
-                text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
-            };
-            this.cards.splice(this.getArrayLimit() - 2, 0, newCard)
+            this.cards.splice(2, this.getArrayLimit() - 4);
+
+            let y = 100
+            for (let i = 0; i <= this.nCardsToAdd; i++) {
+                const newCard = {
+                    src: 'https://picsum.photos/id/'+ y++ +'/100/100',
+                    title: 'Title',
+                    text: 'Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.',
+                };
+
+                this.cards.splice(this.getArrayLimit() - 2, 0, newCard)
+            }
+            console.log(this.nCardsToAdd)
         }
 
     },
