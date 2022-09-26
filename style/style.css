@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#small-range::-moz-range-progress{
+    background-color: black;
+}
+
+#small-range::-moz-range-thumb{
+    background-color: black;
+  }
