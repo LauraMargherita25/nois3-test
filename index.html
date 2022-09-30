@@ -15,7 +15,7 @@
 <body>
     
     <div id="app">
-        <div class="backgraund w-full h-screen flex justify-center items-center" :style="{'background-color': selectedColor}">
+        <div class="backgraund w-full min-w-fit h-screen flex justify-center items-center" :style="{'background-color': selectedColor}">
             
             <!-- Slider container -->
             <div class="relative">
@@ -32,12 +32,12 @@
                     <!-- Input Color per cambio colore sfondo -->
                     <div class="flex items-center">
                         <label for="color">Background color: </label>
-                        <input type="color" id="color" name="color" v-model="selectedColor" class="w-12 h-8 m-2 border-2 border-solid border-white rounded-full"> 
+                        <input type="color" id="color" name="color" v-model="selectedColor" class="w-12 h-8 m-2 border-2 border-solid border-white rounded-full cursor-pointer"> 
                     </div>
                 </nav>
 
                 <!-- Slider -->
-                <ul class="w-[1720px] mb-12 flex">
+                <ul class="w-fit mb-12 flex">
                     
                     <!-- Slider card -->
                     <div class="w-[280px] h-[400px] mx-8 rounded-[25px] bg-white inline-block overflow-hidden shadow-xl first-of-type:opacity-50 last-of-type:opacity-50" v-for="card in getActiveArray()" :style=" card.title ? {'visibility': 'visible'} : {'visibility': 'hidden'} ">
